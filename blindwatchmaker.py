@@ -34,14 +34,13 @@ while completed == False:
 		print(x)
 	completed = True
 	for i in range(21):
-		nxgen = ''
 		for j in range(27):
 			if generation[i][j] != target[i][j]:
 				completed = False
 				nxgen += random.choice(CharList)
 			else:
 				nxgen += target[i][j]
-			generation[i] = nxgen
+		generation[i] = nxgen
 	time.sleep(0.1)
 for x in generation:
     print(str(x))
