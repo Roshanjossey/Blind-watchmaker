@@ -1,9 +1,10 @@
 import string
+import os
 import sys
 import random
 import time
 
-CharList = string.ascii_lowercase + string.ascii_uppercase + string.digits + '|()_-,;*.+/ \\\''
+CharList = string.ascii_lowercase + string.ascii_uppercase + string.digits + '|()_`.-,;*.+/    \\\''
 target = ['              (()          ',
 '              ())          ',
 '              (()          ',
@@ -30,10 +31,12 @@ nxgen = ''
 completed = False
 
 while completed == False:
+	os.system('clear')
 	for x in generation:
 		print(x)
 	completed = True
 	for i in range(21):
+		nxgen = ''
 		for j in range(27):
 			if generation[i][j] != target[i][j]:
 				completed = False
@@ -42,8 +45,4 @@ while completed == False:
 				nxgen += target[i][j]
 		generation[i] = nxgen
 	time.sleep(0.1)
-for x in generation:
-    print(str(x))
-for x in target:
-    print(x)
 
