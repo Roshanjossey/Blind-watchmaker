@@ -3,6 +3,7 @@ import os
 import sys
 import random
 import time
+from sys import platform
 
 CharList = string.ascii_lowercase + string.ascii_uppercase + string.digits + '|()_`.-,;*.+/    \\\''
 target = ['              (()          ',
@@ -31,7 +32,10 @@ nxgen = ''
 completed = False
 
 while completed == False:
-	os.system('clear')
+        if platform == "linux" or platform == "linux2" or platform == "darwin":
+            os.system('clear')
+        else:
+            os.system('cls')	
 	for x in generation:
 		print(x)
 	completed = True
